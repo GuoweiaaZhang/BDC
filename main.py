@@ -12,7 +12,7 @@ from torch.autograd import Variable
 import numpy as np
 from torch.cuda.amp import autocast, GradScaler
 # =================== parameter set- ===================
-epoch = 50
+epoch = 100
 lr = 0.0005
 weight_decay = 0.00005
 batchsize = 40
