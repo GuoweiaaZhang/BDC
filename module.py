@@ -6,7 +6,7 @@ Models Set
 
 1.LSP_1: learnable feature perturbation module
 2.CNN: Convolutional Neural Network for Feature Extraction
-3.CNN_Tea: Convolutional Neural Network for Feature Extraction with LDP Module
+3.CNN_Tea: Convolutional Neural Network for Feature Extraction with LSP Module
 4.Classifier:Classifier for CNNs
 5.Classifier_te: Classifier for CNN_Tea
 6.SupConLoss: supervised contrast loss
