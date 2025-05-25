@@ -1,6 +1,6 @@
 # ⚙️ ADC
 🛠️ This repository provides the official implementation of the paper  
-**"Balancing Discrepancy and Consistency: Adversarial Single Domain Generalization in Fault Diagnosis"**.
+**"                                                                      "**.
 
 It includes the network architecture, loss functions, FFT-based data processing, and comparisons for single-domain generalization in intelligent fault diagnosis tasks.
 # 🔗 Data link
