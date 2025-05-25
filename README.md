@@ -59,7 +59,7 @@ We compare our method with the following state-of-the-art single-domain generali
 | Method   | Paper Link |
 |----------|------------|
 | MEADA    | [Maximum-Entropy Adversarial Data Augmentation for Improved Generalization and Robustness]([https://ieeexplore.ieee.org/document/9546631](https://proceedings.neurips.cc/paper/2020/hash/a5bfc9e07964f8dddeb95fc584cd965d-Abstract.html)) |
-| L2D      | [[Learning To Diversify for Single Domain Generalization](Learning To Diversify for Single Domain Generalization)](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Learning_To_Diversify_for_Single_Domain_Generalization_ICCV_2021_paper.html)|
+| L2D      | [[Learning To Diversify for Single Domain Generalization](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Learning_To_Diversify_for_Single_Domain_Generalization_ICCV_2021_paper.html)|
 | AMINet   | [Mutual Information Minimization for Unsupervised Domain Adaptation](https://arxiv.org/abs/2101.11439) |
 | MSGACN   | [Multi-Scale Graph Attention for Intelligent Fault Diagnosis](https://doi.org/10.1016/j.ymssp.2022.109290) |
 | ACL      | [Learning to Generalize Out-of-Distribution With Causal Invariance](https://openaccess.thecvf.com/content/CVPR2021/html/Qiao_Learning_to_Generalize_Out-of-Distribution_With_Causal_Invariance_CVPR_2021_paper.html) |
