@@ -31,7 +31,11 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 ├── load_data.py # Data loading and FFT
 
-├── data # Quick-run example data provided
+├──PU_0900_1000_07.mat # Quick-run example data provided
+
+├──PU_1500_0400_07.mat # Quick-run example data provided
+
+├──PU_1500_1000_01.mat  # Quick-run example data provided
 
 ├── Comparison Methods # Code for the relevant comparison method
 
