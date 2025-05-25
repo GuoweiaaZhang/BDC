@@ -28,6 +28,10 @@ ADC
 
 ├── load_data.py # Data loading and FFT
 
+├── data # Quick-run example data provided
+
+├── Comparison Methods # Code for the relevant comparison method
+
 ├── construct_loader.py # Dataloader builder
 
 ├── main.py # Training and evaluation
