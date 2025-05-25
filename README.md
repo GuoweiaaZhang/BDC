@@ -60,10 +60,10 @@ We compare our method with the following state-of-the-art single-domain generali
 |----------|------------|
 | MEADA    | [Maximum-Entropy Adversarial Data Augmentation for Improved Generalization and Robustness](https://proceedings.neurips.cc/paper/2020/hash/a5bfc9e07964f8dddeb95fc584cd965d-Abstract.html) |
 | L2D      | [Learning To Diversify for Single Domain Generalization](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Learning_To_Diversify_for_Single_Domain_Generalization_ICCV_2021_paper.html)|
-| AMINet   | [Mutual Information Minimization for Unsupervised Domain Adaptation](https://arxiv.org/abs/2101.11439) |
-| MSGACN   | [Multi-Scale Graph Attention for Intelligent Fault Diagnosis](https://doi.org/10.1016/j.ymssp.2022.109290) |
-| ACL      | [Learning to Generalize Out-of-Distribution With Causal Invariance](https://openaccess.thecvf.com/content/CVPR2021/html/Qiao_Learning_to_Generalize_Out-of-Distribution_With_Causal_Invariance_CVPR_2021_paper.html) |
-| DEFSDG   | [Dynamic Entropy Filtering for Single Domain Generalization](https://ieeexplore.ieee.org/document/10011026) |
+| AMINet   | [Adversarial Mutual Information-Guided Single Domain Generalization Network for Intelligent Fault Diagnosis](https://ieeexplore.ieee.org/abstract/document/9774938) |
+| MSGACN   | [Multi-scale style generative and adversarial contrastive networks for single domain generalization fault diagnosis](https://www.sciencedirect.com/science/article/pii/S0951832023007937) |
+| ACL      | [Single domain generalization method based on anti-causal learning for rotating machinery fault diagnosis](https://www.sciencedirect.com/science/article/pii/S0951832024003247) |
+| DEFSDG   | [Domain expansion fusion single-domain generalization framework for mechanical fault diagnosis under unknown working conditions](https://www.sciencedirect.com/science/article/pii/S0952197624015380) |
 
 > ✅ The implementation of all the above comparative methods has been included in this repository under the `Comparison Methods/` directory.
 
