@@ -23,7 +23,7 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 # Project Structure
 ADC
-│
+
 ├── module/ # Loss functions and modules
 
 ├── load_data.py # Data loading and FFT
