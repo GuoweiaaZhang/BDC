@@ -47,3 +47,8 @@ We provide a sample dataset and a ready-to-run script so that users can quickly 
    
 4. **Run the** main.py **file to start training and evaluation**.
    
+#  Contact
+
+If you have any questions, feel free to open an issue or contact the author.
+
+📮 Contact will be made publicly available after the paper is accepted.
