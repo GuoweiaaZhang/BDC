@@ -45,7 +45,13 @@ We recommend using `conda` to manage the environment for consistent dependencies
 We provide a sample dataset and a ready-to-run script so that users can quickly reproduce the results.
 
 1. **Preparing data**
-- Option 1: Use the dataset already included in the.
+- Option 1: To help users get started quickly, we provide **three pre-segmented vibration signal samples** from the PU dataset:
+
+- `PU_0900_1000_07.mat`
+- `PU_1500_0400_07.mat`
+- `PU_1500_1000_01.mat`
+
+These `.mat` files are already uploaded to this repository root and can be used directly without any preprocessing. They are representative of different operating conditions and fault types.
 - Option 2: Download the data manually from: [📥 External download link](https://your-download-link.com)
 
 2. **Place the dataset in the `./data/` directory** (create this folder if it doesn't exist).
