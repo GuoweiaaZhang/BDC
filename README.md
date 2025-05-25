@@ -16,3 +16,9 @@ This ensures that the entire pipeline is simple, reproducible, and focused on fr
 
 👉 Download the segmented time-domain data here:  
 [📥 Click to download time-domain dataset](https://your-download-link.com)
+# Environment Setup
+This project is developed and tested under Python 3.9 with PyTorch ≥ 1.12.
+
+We recommend using `conda` to manage the environment for consistent dependencies.
+
+
