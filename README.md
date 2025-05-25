@@ -51,18 +51,22 @@ We provide a sample dataset and a ready-to-run script so that users can quickly 
    
 4. **Run the** main.py **file to start training and evaluation**.
 
-## 📊 Comparative Methods
 
-We compare our method with the following baselines:
+# 🔬 Comparative Methods
 
-| Method     | Paper Link                                               | 
-|------------|----------------------------------------------------------|----------------------------------------------|
-| MEADA  | [MEADA: Meta-Learning Based Adversarial Domain Adaptation](https://ieeexplore.ieee.org/document/9546631) |
-| L2D   | [Learning to Diversify for Generalization](https://openaccess.thecvf.com/content_CVPR_2020/html/Yue_Domain_Diversification_Through_Self-Supervision_for_Robust_Domain_Adaptation_CVPR_2020_paper.html) |
-| AMINet ]| [Mutual Information Minimization for Unsupervised Domain Adaptation](https://arxiv.org/abs/2101.11439) | 
-| MSGACN | [Multi-Scale Graph Attention for Fault Diagnosis](https://doi.org/10.1016/j.ymssp.2022.109290) | 
-| ACL    | [Causal Learning for Single-Domain Generalization](https://openaccess.thecvf.com/content/CVPR2021/html/Qiao_Learning_to_Generalize_Out-of-Distribution_With_Causal_Invariance_CVPR_2021_paper.html) | 
-| DEFSDG | [Dynamic Entropy Filtering for Single Domain Generalization](https://ieeexplore.ieee.org/document/10011026) |
+We compare our method with the following state-of-the-art single-domain generalization and fault diagnosis methods:
+
+| Method   | Paper Link |
+|----------|------------|
+| MEADA    | [Maximum-Entropy Adversarial Data Augmentation for Improved Generalization and Robustness]([https://ieeexplore.ieee.org/document/9546631](https://proceedings.neurips.cc/paper/2020/hash/a5bfc9e07964f8dddeb95fc584cd965d-Abstract.html)) |
+| L2D      | [Learning To Diversify for Single Domain Generalization][(https://openaccess.thecvf.com/content_CVPR_2020/html/Yue_Domain_Diversification_Through_Self-Supervision_for_Robust_Domain_Adaptation_CVPR_2020_paper.html](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Learning_To_Diversify_for_Single_Domain_Generalization_ICCV_2021_paper.html)) |
+| AMINet   | [Mutual Information Minimization for Unsupervised Domain Adaptation](https://arxiv.org/abs/2101.11439) |
+| MSGACN   | [Multi-Scale Graph Attention for Intelligent Fault Diagnosis](https://doi.org/10.1016/j.ymssp.2022.109290) |
+| ACL      | [Learning to Generalize Out-of-Distribution With Causal Invariance](https://openaccess.thecvf.com/content/CVPR2021/html/Qiao_Learning_to_Generalize_Out-of-Distribution_With_Causal_Invariance_CVPR_2021_paper.html) |
+| DEFSDG   | [Dynamic Entropy Filtering for Single Domain Generalization](https://ieeexplore.ieee.org/document/10011026) |
+
+> ✅ The implementation of all the above comparative methods has been included in this repository under the `Comparison Methods/` directory.
+
 
 
 # 📬 Contact
