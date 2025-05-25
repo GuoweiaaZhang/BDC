@@ -18,7 +18,7 @@ The raw input data consists of **vibration acceleration signals**. We do not app
 This ensures that the entire pipeline is simple, reproducible, and focused on frequency-domain representations only.
 
 👉 Download the segmented time-domain data here:  
-[📥 Click to download time-domain dataset](https://your-download-link.com)
+[📥 Click to download time-domain dataset](https://drive.google.com/drive/folders/1Ok5xu_rYZKq47lokK3_Oad4XsGGixOSc?usp=drive_link)
 # 🧪 Environment Setup
 This project is developed and tested under Python 3.9 with PyTorch ≥ 1.12.
 
@@ -52,7 +52,7 @@ We provide a sample dataset and a ready-to-run script so that users can quickly 
 - `PU_1500_1000_01.mat`
 
 These `.mat` files are already uploaded to this repository root and can be used directly without any preprocessing. They are representative of different operating conditions and fault types.
-- Option 2: Download the data manually from: [📥 External download link](https://your-download-link.com)
+- Option 2: Download the data manually from: [📥 External download link](https://drive.google.com/drive/folders/1Ok5xu_rYZKq47lokK3_Oad4XsGGixOSc?usp=drive_link)
 
 2. **Place the dataset in the `./data/` directory** (create this folder if it doesn't exist).
 
