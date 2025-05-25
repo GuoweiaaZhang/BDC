@@ -13,5 +13,6 @@ The raw input data consists of **vibration acceleration signals**. We do not app
 - A **Fast Fourier Transform (FFT)** is applied to each segment during data loading, implemented in `load_data.py`.
 
 This ensures that the entire pipeline is simple, reproducible, and focused on frequency-domain representations only.
+
 👉 Download the segmented time-domain data here:  
 [📥 Click to download time-domain dataset](https://your-download-link.com)
