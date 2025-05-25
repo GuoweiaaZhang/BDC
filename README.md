@@ -43,7 +43,7 @@ We provide a sample dataset and a ready-to-run script so that users can quickly 
 
 2. **Place the dataset in the `./data/` directory** (create this folder if it doesn't exist).
 
-3. **Clone this repository**
+3. **Clone this repository**.
    
-4. **Run the** main.py **file to start training and evaluation**
+4. **Run the** main.py **file to start training and evaluation**.
    
