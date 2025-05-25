@@ -68,7 +68,6 @@ We compare our method with the following state-of-the-art single-domain generali
 > ✅ The implementation of all the above comparative methods has been included in this repository under the `Comparison Methods/` directory.
 
 
-
 # 📬 Contact
 
 If you have any questions, feel free to open an issue or contact the author.
