@@ -45,5 +45,5 @@ We provide a sample dataset and a ready-to-run script so that users can quickly 
 
 3. **Clone this repository**
    
-4. **Run the main file to start training and evaluation**
+4. **Run the main.py file to start training and evaluation**
    
