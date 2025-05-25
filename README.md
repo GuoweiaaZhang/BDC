@@ -33,4 +33,17 @@ ADC
 ├── main.py # Training and evaluation
 
 └── README.md
+#  Quick Start
 
+We provide a sample dataset and a ready-to-run script so that users can quickly reproduce the results.
+
+1. **Preparing data**
+- Option 1: Use the dataset already included in the `./data/` folder (if you downloaded the full repository ZIP).
+- Option 2: Download the data manually from: [📥 External download link](https://your-download-link.com)
+
+2. **Place the dataset in the `./data/` directory** (create this folder if it doesn't exist).
+
+3. **Clone this repository**
+   
+4. **Run the main file to start training and evaluation**
+   
