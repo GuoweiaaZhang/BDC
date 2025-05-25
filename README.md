@@ -22,11 +22,15 @@ This project is developed and tested under Python 3.9 with PyTorch ≥ 1.12.
 We recommend using `conda` to manage the environment for consistent dependencies.
 
 # Project Structure
-ADC/
+ADC
 │
 ├── module/ # Loss functions and modules
+
 ├── load_data.py # Data loading and FFT
+
 ├── construct_loader.py # Dataloader builder
+
 ├── main.py # Training and evaluation
+
 └── README.md
 
