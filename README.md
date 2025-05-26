@@ -15,7 +15,7 @@ The datasets used in this project can be accessed from the links below.
 # 🛠️ Data preprocessing
 The raw input data consists of **vibration acceleration signals**. We do not apply any additional preprocessing steps such as denoising or normalization. 
 
-- Each sample is extracted by segmenting the original signal into fixed-length(2048) windows.
+- Each sample is extracted by segmenting the original signal into fixed-length (2048) windows.
 - A Fast Fourier Transform (FFT) is applied to each segment during data loading, implemented in `load_data.py`.
 
 This ensures that the entire pipeline is simple, reproducible, and focused on frequency-domain representations only.
