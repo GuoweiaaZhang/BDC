@@ -33,9 +33,9 @@ x_train_Data_PU_1500_1000_01, x_train_y_Data_PU_1500_1000_01, x_test_Data_PU_150
                                                                                              'PU_1500_1000_01', 10, 100, [])
 
 # =======Single Domain Generalized Task Setting. Setting up different generalization tasks by adjusting the index======================
-Task_data = [x_train_Data_c2000.cuda(), x_train_y_Data_c2000.view(-1),
-             x_train_Data_c2500.cuda(), x_train_y_Data_c2500.view(-1),
-             x_train_Data_c3000.cuda(), x_train_y_Data_c3000.view(-1)]
+Task_data = [x_train_Data_PU_0900_1000_07.cuda(), x_train_y_Data_PU_0900_1000_07.view(-1),
+             x_train_Data_PU_1500_0400_07.cuda(), x_train_y_Data_PU_1500_0400_07.view(-1),
+             x_train_Data_PU_1500_1000_01.cuda(), x_train_y_Data_PU_1500_1000_01.view(-1)]
 
 Train_X1 = Task_data[0]  # Source Domain Data
 Train_Y1 = Task_data[1]  # Source Domain labels
