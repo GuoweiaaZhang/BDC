@@ -27,10 +27,6 @@ We recommend using `conda` to manage the environment for consistent dependencies
 # 📁 Project Structure
  ADC
 
-├── module/ # Loss functions and modules
-
-├── load_data.py # Data loading and FFT
-
 ├──PU_0900_1000_07.mat # Quick-run example data provided
 
 ├──PU_1500_0400_07.mat # Quick-run example data provided
@@ -39,7 +35,11 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 ├── Comparison Methods # Code for the relevant comparison method
 
+├── load_data.py # Data loading and FFT
+
 ├── construct_loader.py # Dataloader builder
+
+├── module/ # Loss functions and modules
 
 ├── main.py # Training and evaluation
 
