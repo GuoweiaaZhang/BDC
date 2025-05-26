@@ -13,7 +13,7 @@ The datasets used in this project can be accessed from the links below.
 6. 
 | No. | Dataset | Source | Link |
 |-----|---------|--------|------|
-| 1   | PU (Paderborn University)            | University Website | [Data Link](https://link-to-pu-dataset.com) |
+| 1   | PU (Paderborn University)            | University Website | [Data Link](https://mb.uni-paderborn.de/en/kat/research/kat-datacenter/bearing-datacenter/data-sets-and-download) |
 | 2   | HUST (Huazhong University of Science and Technology) | GitHub | [GitHub Link](https://github.com/CHAOZHAO-1/HUSTbearing-dataset) |
 | 3   | BJUT (Beijing University of Technology) | GitHub | [GitHub Link](https://github.com/Liudd-BJUT/WT-planetary-gearbox-dataset/tree/master) |
 | 4   | SDUST (Shandong University of Science and Technology) | GitHub | [GitHub Link]( https://github.com/JRWang-SDUST/SDUST-Dataset.git) |
