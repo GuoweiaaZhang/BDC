@@ -18,19 +18,19 @@ weight_decay = 0.00005
 batchsize = 40
 n_classes = 10
 # ===================================== Data loading ====================================
-# SDUST data format is sample size * 1 * 2049, The 2049 dimension contains 2048 dimensions of sample points and 1 dimension of labels.
-Data_c2000_path = r'E:\Code\Data\Data_c2000.mat'
-x_train_Data_c2000, x_train_y_Data_c2000, x_test_Data_c2000, x_test_y_Data_c2000 = load_data(Data_c2000_path,
-                                                                                             'Data_c2000', 10, 100,
+# PU data format is sample size * 1 * 2049, The 2049 dimension contains 2048 dimensions of sample points and 1 dimension of labels.
+PU_0900_1000_07_path = r'E:\Code\Data\PU_0900_1000_07.mat'
+x_train_Data_PU_0900_1000_07, x_train_y_Data_PU_0900_1000_07, x_test_Data_PU_0900_1000_07, x_test_y_Data_PU_0900_1000_07 = load_data(PU_0900_1000_07_path,
+                                                                                             'PU_0900_1000_07', 10, 100,
                                                                                              [])  # Data segmentation and data fft transformation
 
-Data_c2500_path = r'E:\Code\Data\Data_c2500.mat'
-x_train_Data_c2500, x_train_y_Data_c2500, x_test_Data_c2500, x_test_y_Data_c2500 = load_data(Data_c2500_path,
-                                                                                             'Data_c2500', 10, 100, [])
+PU_1500_0400_07_path = r'E:\Code\Data\PU_1500_0400_07.mat'
+x_train_Data_PU_1500_0400_07, x_train_y_Data_PU_1500_0400_07, x_test_Data_PU_1500_0400_07, x_test_y_Data_PU_1500_0400_07 = load_data(PU_1500_0400_07_path,
+                                                                                             'PU_1500_0400_07', 10, 100, [])
 
-Data_c3000_path = r'E:\Code\Data\Data_c3000.mat'
-x_train_Data_c3000, x_train_y_Data_c3000, x_test_Data_c3000, x_test_y_Data_c3000 = load_data(Data_c3000_path,
-                                                                                             'Data_c3000', 10, 100, [])
+PU_1500_1000_01_path = r'E:\Code\DataPU_1500_1000_01.mat'
+x_train_Data_PU_1500_1000_01, x_train_y_Data_PU_1500_1000_01, x_test_Data_PU_1500_1000_01, x_test_y_Data_PU_1500_1000_01 = load_data(PU_1500_1000_01_path,
+                                                                                             'PU_1500_1000_01', 10, 100, [])
 
 # =======Single Domain Generalized Task Setting. Setting up different generalization tasks by adjusting the index======================
 Task_data = [x_train_Data_c2000.cuda(), x_train_y_Data_c2000.view(-1),
