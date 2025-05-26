@@ -16,7 +16,7 @@ The datasets used in this project can be accessed from the links below.
 The raw input data consists of **vibration acceleration signals**. We do not apply any additional preprocessing steps such as denoising or normalization. 
 
 - Each sample is extracted by segmenting the original signal into fixed-length windows.
-- A **Fast Fourier Transform (FFT)** is applied to each segment during data loading, implemented in `load_data.py`.
+- A Fast Fourier Transform (FFT) is applied to each segment during data loading, implemented in `load_data.py`.
 
 This ensures that the entire pipeline is simple, reproducible, and focused on frequency-domain representations only.
 
@@ -34,11 +34,11 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 ├── PU_1500_0400_07.mat # Quick-run example data provided
 
-├── PU_1500_1000_01.mat  # Quick-run example data provided
+├── PU_1500_1000_01.mat # Quick-run example data provided
 
 ├── Comparison Methods # Code for the relevant comparison method
 
-├── load_data.py # Data loading and FFT
+├── load_data.py      # Data loading and FFT
 
 ├── construct_loader.py # Dataloader builder
 
