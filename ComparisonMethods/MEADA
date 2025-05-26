@@ -1,1 +1,167 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import numpy as np
+from load_data import *
+from construct_loader import *
+from torch.autograd import Variable
+from torch.utils.data import DataLoader, TensorDataset
+
+
+# Dummy entropy_loss implementation
+def entropy_loss(logits):
+    p = F.softmax(logits, dim=1)
+    return -torch.sum(p * torch.log(p + 1e-6), dim=1).mean()
+
+# Simple model structure 
+class SimpleModel(nn.Module):
+    def __init__(self, num_classes=10):
+        super(SimpleModel, self).__init__()
+
+        self.conv1 = nn.Sequential(
+            nn.Conv1d(1, 16, 32),
+            nn.InstanceNorm1d(16),
+            nn.ReLU(),
+            nn.MaxPool1d(2))
+
+        self.conv2 = nn.Sequential(
+            nn.Conv1d(16, 32, 3),
+            nn.InstanceNorm1d(32),
+            nn.ReLU(),
+            nn.MaxPool1d(2))
+
+        self.conv3 = nn.Sequential(
+            nn.Conv1d(32, 64, 3),
+            nn.InstanceNorm1d(64),
+            nn.ReLU(),
+            nn.MaxPool1d(4))
+
+        self.conv4 = nn.Sequential(
+            nn.Conv1d(64, 128, 3),
+            nn.InstanceNorm1d(128),
+            nn.ReLU(),
+            nn.MaxPool1d(4))
+
+        self.conv5 = nn.Sequential(
+            nn.Conv1d(128, 128, 3),
+            nn.InstanceNorm1d(128),
+            nn.ReLU(),
+            nn.MaxPool1d(2))
+
+        self.fc = nn.Sequential(nn.Linear(128 * 6, 128))
+        self.out = nn.Linear(128, num_classes)
+
+    def forward(self, x):
+
+        x1 = self.conv1(x)
+        self.l0 = x1
+        x2 = self.conv2(x1)
+        self.l1 = x2
+        x3 = self.conv3(x2)
+        self.l2 = x3
+        x4 = self.conv4(x3)
+        x5 = self.conv5(x4)
+        fea = x5.view(x5.size(0), -1)
+
+        logits1 = self.fc(fea)
+        logits = self.out(logits1)
+
+        embedding = x5.view(x.size(0), -1)
+
+        return logits, embedding
+
+class ModelMEADA:
+    def __init__(self, eta=0.1, gamma=1.0, lr_max=0.01, loops_adv=5, lr_train=0.0005, batch_size=40):
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.network = SimpleModel().to(self.device)
+        self.loss_fn = nn.CrossEntropyLoss()
+        self.dist_fn = nn.MSELoss()
+        self.eta = eta
+        self.gamma = gamma
+        self.lr_max = lr_max
+        self.loops_adv = loops_adv
+        self.optimizer = torch.optim.Adam(self.network.parameters(), lr=lr_train)
+        self.batch_size = batch_size
+
+    def maximize(self, inputs, targets):
+        self.network.eval()
+
+        inputs = inputs.to(self.device)
+        targets = targets.to(self.device)
+
+        with torch.no_grad():
+            _, inputs_embedding = self.network(inputs)
+
+        inputs_max = inputs.detach().clone()
+        inputs_max.requires_grad_(True)
+        optimizer = torch.optim.SGD([inputs_max], lr=self.lr_max)
+
+        for _ in range(self.loops_adv):
+            logits, adv_embedding = self.network(inputs_max)
+            loss = self.loss_fn(logits, targets) + \
+                   self.eta * entropy_loss(logits) - \
+                   self.gamma * self.dist_fn(adv_embedding, inputs_embedding)
+
+            optimizer.zero_grad()
+            (-loss).backward()
+            optimizer.step()
+
+        inputs_max = inputs_max.detach().clamp(0.0, 1.0)
+        return inputs_max
+
+    def train(self, inputs, targets, epochs=5):
+
+        Train_loader = construct_loader([inputs, targets], batch_size=40)
+
+        for epoch in range(epochs):
+            self.network.train()
+            epoch_loss = 0.0
+            epoch_accuracy = 0.0
+            iter_source1 = iter(Train_loader)
+
+            for step in range(len(Train_loader)):
+                s1_data, s1_label = iter_source1.__next__()
+                if torch.cuda.is_available():
+                    batch_inputs = Variable(s1_data).type(dtype=torch.float32).cuda()
+                    batch_targets = Variable(s1_label).type(dtype=torch.LongTensor).cuda()
+
+                adv_inputs = self.maximize(batch_inputs, batch_targets)
+                augmented_inputs = torch.cat((batch_inputs, adv_inputs), dim=0)
+                augmented_targets = torch.cat((batch_targets, batch_targets), dim=0)
+
+                logits_aug, _ = self.network(augmented_inputs)
+                loss_aug = self.loss_fn(logits_aug, augmented_targets)
+
+                self.optimizer.zero_grad()
+                loss_aug.backward()
+                self.optimizer.step()
+
+                preds = logits_aug.argmax(dim=1)
+                accuracy = (preds == augmented_targets).float().mean()
+
+                epoch_loss += loss_aug.item()
+                epoch_accuracy += accuracy.item()
+
+            avg_loss = epoch_loss / len(Train_loader)
+            avg_accuracy = (epoch_accuracy / len(Train_loader)) * 100
+            print(f'Epoch {epoch+1}/{epochs}, Avg Loss: {avg_loss:.4f}, Avg Accuracy: {avg_accuracy:.2f}%')
+
+    def evaluate(self, inputs, targets):
+        self.network.eval()
+        inputs, targets = inputs.to(self.device), targets.to(self.device)
+        logits, _ = self.network(inputs)
+        preds = logits.argmax(dim=1)
+        accuracy = (preds == targets).float().mean()
+        return accuracy.item()
+
+# Testing the minimal MEADA implementation
+if __name__ == "__main__":
+    np.random.seed(0)
+    torch.manual_seed(0)
+    model = ModelMEADA(eta=0.1, gamma=1.0, lr_max=0.01, loops_adv=5, lr_train=0.0005, batch_size=40)
+    # Training
+    model.train(Train_X1, Train_Y1, epochs=50)
+    # Evaluating accuracy
+    accuracy = model.evaluate(Test_X, Test_Y)
+    print(f"Test Accuracy: {accuracy*100:.2f}%")
 
