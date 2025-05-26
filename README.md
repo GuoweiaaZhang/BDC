@@ -52,7 +52,7 @@ We recommend using `conda` to manage the environment for consistent dependencies
 We provide a sample dataset and a ready-to-run script so that users can quickly reproduce the results.
 
 1. **Preparing data**
-- Option 1: Option 1: To help users get started quickly, we provide three pre-segmented sample sets of vibration signals from the PU dataset, corresponding to three different operating conditions::
+- Option 1: Option 1: To help users get started quickly, we provide three pre-segmented sample sets of vibration signals from the PU dataset, corresponding to three different operating conditions:
 
 - `PU_0900_1000_07.mat`
 - `PU_1500_0400_07.mat`
