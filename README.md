@@ -12,7 +12,7 @@ The datasets used in this project can be accessed from the links below.
 | 3   | BJUT (Beijing University of Technology) | GitHub | [GitHub Link](https://github.com/Liudd-BJUT/WT-planetary-gearbox-dataset/tree/master) |
 | 4   | SDUST (Shandong University of Science and Technology) | GitHub | [GitHub Link]( https://github.com/JRWang-SDUST/SDUST-Dataset.git) |
 | 5   | RFB (Real Factory Bearing)          | Google Drive | [Drive Link](https://drive.google.com/drive/folders/1DHthZwWF6UCn5ukUCBAqJUe1uBwbxXX8?usp=share_link) |
-# ⚙️ Data preprocessing
+# 🧹 Data preprocessing
 The raw input data consists of **vibration acceleration signals**. We do not apply any additional preprocessing steps such as denoising or normalization. 
 
 - Each sample is extracted by segmenting the original signal into fixed-length windows.
