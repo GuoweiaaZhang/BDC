@@ -64,7 +64,7 @@ These `.mat` files are already uploaded to this repository root and can be used 
 4. **Run the** main.py **file to start training and evaluation**.
 
 
-# 🔬 Comparative Methods
+# 📊 Comparative Methods
 
 We compare our method with the following state-of-the-art single-domain generalization and fault diagnosis methods:
 
