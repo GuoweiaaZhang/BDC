@@ -1,6 +1,6 @@
 # ⚙️ ADC
 🛠️ This repository provides the official implementation of the paper.  
-**"ADC"**.
+**" "**.
 
 # 🔗 Data link
 The datasets used in this project can be accessed from the links below.
