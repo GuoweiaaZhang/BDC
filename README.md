@@ -42,7 +42,7 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 ├── construct_loader.py # Dataloader builder
 
-├── module/ # Loss functions and modules
+├── module.py # Loss functions and modules
 
 ├── main.py # Training and evaluation
 
