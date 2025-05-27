@@ -1,4 +1,4 @@
-# ⚙️ ADC
+# ⚙️ Balancing Discrepancy and Consistency
 🛠️ This repository provides the official implementation of the paper.  
 **" "**.
 
