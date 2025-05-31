@@ -1,1 +1,10 @@
+"""
+The implementation of this method is currently being organized and will be uploaded shortly. 
+This is an unofficial reimplementation based on the paper:
 
+Wang, Zijian, et al. "Learning to diversify for single domain generalization." 
+Proceedings of the IEEE/CVF international conference on computer vision. 2021.
+
+This implementation is provided for academic comparison only.
+It may differ from the original code published by the authors.
+"""
