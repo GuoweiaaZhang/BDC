@@ -8,6 +8,10 @@ Reliability Engineering & System Safety 243 (2024): 109879.
 This implementation is provided for academic comparison only.
 It may differ from the original code published by the authors.
 """
+
+import torch
+import torch.nn as nn
+
 class FSupConLoss(nn.Module):
 
     def __init__(self, temperature=0.07, contrast_mode='all',
