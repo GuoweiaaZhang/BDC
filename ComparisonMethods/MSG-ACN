@@ -247,53 +247,7 @@ class SupConLoss(nn.Module):
         loss = loss.view(anchor_count, batch_size).mean()
 
         return loss
-class SConv_1D(nn.Module):
-    def __init__(self, in_ch, out_ch, kernel):
-        super(SConv_1D, self).__init__()
 
-        self.conv = nn.Sequential(
-            nn.Conv1d(in_ch, out_ch, kernel,stride=2),
-            nn.BatchNorm1d(out_ch),
-            nn.ReLU(inplace=True),
-        )
-
-    def forward(self, x):
-        return self.conv(x)
-
-class FeatureExtractor(nn.Module):
-    def __init__(self, in_channel=1, num_classes=0, lr=0.1):
-        super(FeatureExtractor, self).__init__()
-        num_c=16
-   
-        self.conv1 = SConv_1D(1, num_c, 3, )
-        self.conv2 = SConv_1D(num_c,  num_c*2, 3,)
-        self.conv3 = SConv_1D(num_c*2, num_c*4, 3, )
-        self.conv4 = SConv_1D(num_c*4, num_c*8, 3, )
-        self.conv5 = SConv_1D(num_c*8, num_c*16, 3, )
-
-    
-        self.avg_pool = nn.AdaptiveAvgPool1d(1)
-        self.fc_1 = nn.Linear(num_c*16, num_classes)
-        self.fc_2 = nn.Linear(num_c*16, num_classes)
-        self.fc_3 = nn.Linear(num_c*16, num_classes)
-        self.fc_4 = nn.Linear(num_c*16, num_classes)
-        self.p_logvar = nn.Sequential(nn.Linear(256, 128),
-                                      nn.ReLU(),nn.Linear(128, 128),
-                                      nn.ReLU())
-    def forward(self, input,train="True"):
-        x1 = self.conv1(input)
-        x2 = self.conv2(x1)
-        x3 = self.conv3(x2)
-        x4 = self.conv4(x3)
-        x5 = self.conv5(x4)
-
-        x = self.avg_pool(x5)
-        x = x.view(x.size(0), -1)
-
-        logvar = self.p_logvar(x)
-        x = self.fc_1(x)
-
-        return x, logvar
 def reparametrize(mu, logvar, factor=0.2):
     std = logvar.div(2).exp()
     eps = std.data.new(std.size()).normal_()
