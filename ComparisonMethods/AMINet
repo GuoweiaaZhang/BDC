@@ -1,5 +1,10 @@
 """
 The implementation of this method is currently being organized and will be uploaded shortly. 
-This is an unofficial reimplementation based on the paper “Adversarial mutual information-guided single domain generalization network for intelligent fault diagnosis”, and it may differ from the authors’ original code. 
-The provided version is intended for academic use and comparison purposes only.
+This is an unofficial reimplementation based on the paper:
+
+Zhao, Chao, and Weiming Shen. "Adversarial mutual information-guided single domain generalization network for intelligent fault diagnosis." 
+IEEE Transactions on Industrial Informatics 19.3 (2022): 2909-2918.
+
+This implementation is provided for academic comparison only.
+It may differ from the original code published by the authors.
 """
