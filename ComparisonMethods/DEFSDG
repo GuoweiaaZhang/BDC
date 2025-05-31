@@ -84,7 +84,6 @@ class ResNet1D(nn.Module):
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2, padding=1)
 
-       
         self.layer1 = self._make_layer(64, 64, blocks=2)
         self.layer2 = self._make_layer(64, 128, blocks=2, stride=2)
         self.layer3 = self._make_layer(128, 256, blocks=2, stride=2)
