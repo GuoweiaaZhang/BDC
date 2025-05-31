@@ -1,0 +1,10 @@
+"""
+The implementation of this method is currently being organized and will be uploaded shortly. 
+This is an unofficial reimplementation based on the paper:
+
+Li, Xuegang, et al. "Domain expansion fusion single-domain generalization framework for mechanical fault diagnosis under unknown working conditions." 
+Engineering Applications of Artificial Intelligence 138 (2024): 109380.
+
+This implementation is provided for academic comparison only.
+It may differ from the original code published by the authors.
+"""
