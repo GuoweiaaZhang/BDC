@@ -8,6 +8,12 @@ Engineering Applications of Artificial Intelligence 138 (2024): 109380.
 This implementation is provided for academic comparison only.
 It may differ from the original code published by the authors.
 """
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import numpy as np
+
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, max_len=5000):
         super(PositionalEncoding, self).__init__()
