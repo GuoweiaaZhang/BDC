@@ -1,5 +1,5 @@
 """
-The implementation of this method is currently being organized and will be uploaded shortly. 
+The core components of this method have already been uploaded. We are currently organizing the remaining parts and will update the repository as soon as possible.
 This is an unofficial reimplementation based on the paper:
 
 Wang, Jun, et al. "Multi-scale style generative and adversarial contrastive networks for single domain generalization fault diagnosis." 
