@@ -1,3 +1,12 @@
+"""
+Unofficial implementation of the method proposed in:
+
+Zhao, Long, et al. "Maximum-entropy adversarial data augmentation for improved generalization and robustness." 
+Advances in Neural Information Processing Systems 33 (2020): 14435-14447.
+
+This implementation is provided for academic comparison only.
+It may differ from the original code published by the authors.
+"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
