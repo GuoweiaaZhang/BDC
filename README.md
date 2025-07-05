@@ -1,6 +1,6 @@
-# ⚙️ Balancing Discrepancy and Consistency
+# ⚙️ Balancing Discrepancy and Consistency (BDC)
 🛠️ This repository provides the official implementation of the paper.  
-**"Balancing Discrepancy and Consistency: Adversarial Single Domain Generalization in Fault Diagnosis"**.
+**"[TII] Balancing Discrepancy and Consistency: Adversarial Single Domain Generalization in Fault Diagnosis"**.
 
 # 🔗 Data link
 The datasets used in this project can be accessed from the links below.
