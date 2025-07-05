@@ -36,8 +36,6 @@ We recommend using `conda` to manage the environment for consistent dependencies
 
 ├── PU_1500_1000_01.mat # Quick-run example data provided
 
-├── Comparison Methods # Code for the relevant comparison method
-
 ├── load_data.py      # Data loading and FFT
 
 ├── construct_loader.py # Dataloader builder
