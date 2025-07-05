@@ -81,9 +81,6 @@ We compare our method with the following state-of-the-art single-domain generali
 | ACL      | [Single domain generalization method based on anti-causal learning for rotating machinery fault diagnosis](https://www.sciencedirect.com/science/article/pii/S0951832024003247) |
 | DEFSDG   | [Domain expansion fusion single-domain generalization framework for mechanical fault diagnosis under unknown working conditions](https://www.sciencedirect.com/science/article/pii/S0952197624015380) |
 
-> ✅ The implementation of all the above comparative methods has been included in this repository under the `Comparison Methods/` directory.
-
-
 # 📬 Contact
 
 If you have any questions, feel free to open an issue or contact the author.
