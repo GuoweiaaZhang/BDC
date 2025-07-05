@@ -28,7 +28,7 @@ This project is developed and tested under Python 3.9 with PyTorch 1.12.
 We recommend using `conda` to manage the environment for consistent dependencies.
 
 # 📁 Project Structure
- ADC
+ BDC
 
 ├── PU_0900_1000_07.mat # Quick-run example data provided
 
