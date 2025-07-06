@@ -20,7 +20,7 @@ The raw input data consists of **vibration acceleration signals**. We do not app
 
 This ensures that the entire pipeline is simple, reproducible, and focused on frequency-domain representations only.
 
-👉 Download the segmented time-domain data here:  
+👉 Download the segmented data and corresponding labels here: 
 [📥 Click to download time-domain dataset](https://drive.google.com/drive/folders/1Ok5xu_rYZKq47lokK3_Oad4XsGGixOSc?usp=drive_link)
 # 🧪 Environment Setup
 This project is developed and tested under Python 3.9 with PyTorch 1.12.
