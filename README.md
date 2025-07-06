@@ -58,13 +58,10 @@ A sample dataset and a ready-to-run script are provided to facilitate quick and 
 
 These `.mat` files are already uploaded to this repository root and can be used directly without any preprocessing. They are representative of different operating conditions and fault types.
 - Option 2: Download the data manually from: [📥 External download link](https://drive.google.com/drive/folders/1Ok5xu_rYZKq47lokK3_Oad4XsGGixOSc?usp=drive_link)
-
-2. **Please modify the dataset loading path in the code (`main.py`) to match the actual location where you store the .mat files on your machine**.
-
-3. **Clone this repository**.
-   
+  
+2. **Clone this repository**.
+3. **Please modify the dataset loading path in the code (`main.py`) to match the actual location where you store the .mat files on your machine**.
 4. **Run the** `main.py` **file to start training and evaluation**.
-
 
 # 📊 Comparative Methods
 
