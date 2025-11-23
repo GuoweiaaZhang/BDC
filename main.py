@@ -128,19 +128,20 @@ if torch.cuda.is_available():
             amp_grad_scaler.update()
             # -----Training discrepancy-guided learnable feature statistics modules-------
             optimizer_LD.zero_grad()
-            with autocast():
+            with autocast(enabled=False):
 
                 features_st, _ = CNN_st(s1_x)
                 features_te, _ = CNN_te(s1_x, perturb=True)
                 l0, l1, l2 = CNN_te.l0, CNN_te.l1, CNN_te.l2
                 l0_st, l1_st, l2_st = CNN_st.l0, CNN_st.l1, CNN_st.l2
-                def l2n(f, eps=1e-6):
-                    return f / (f.norm(p=2, dim=1, keepdim=True) + eps)
+                # def l2n(f, eps=1e-6):
+                #     return f / (f.norm(p=2, dim=1, keepdim=True) + eps)
                 B = l0_st.size(0)
-                l0_st_f = l2n(l0_st.view(B, -1))
-                l0_f = l2n(l0.view(B, -1))
+                # l0_st_f = l2n(l0_st.view(B, -1))
+                # l0_f = l2n(l0.view(B, -1))
                 #  loss coral
-                coral_0 = CORAL(l0_st_f, l0_f)
+                # coral_0 = CORAL(l0_st_f, l0_f)
+                coral_0 = CORAL(l0.view(B, -1), l0_st.view(B, -1))
                 loss_2 = - 100 * (coral_0)
 
             amp_grad_scaler.scale(loss_2).backward()
@@ -190,5 +191,6 @@ if torch.cuda.is_available():
             print(
                 '==> Epoch: {}/{}, Loss_1: {:.5f}, Loss_2: {:.5f}, Test_Acc: {:.5f}, Recall: {:.4f}, F1: {:.4f}, Running time is {:.5f} s'.format(
                     i + 1, epoch, mean_loss_1, mean_loss_2, test_acc, recall_ave_class, f1, time_len))
+
 
 
