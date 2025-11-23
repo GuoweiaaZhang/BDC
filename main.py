@@ -141,8 +141,6 @@ if torch.cuda.is_available():
                 l0_f = l2n(l0.view(B, -1))
                 #  loss coral
                 coral_0 = CORAL(l0_st_f, l0_f)
-                coral_1 = CORAL(l1_st.view(40, -1), l1.view(40, -1))
-                coral_2 = CORAL(l2_st.view(40, -1), l2.view(40, -1))
                 loss_2 = - 100 * (coral_0)
 
             amp_grad_scaler.scale(loss_2).backward()
@@ -192,4 +190,5 @@ if torch.cuda.is_available():
             print(
                 '==> Epoch: {}/{}, Loss_1: {:.5f}, Loss_2: {:.5f}, Test_Acc: {:.5f}, Recall: {:.4f}, F1: {:.4f}, Running time is {:.5f} s'.format(
                     i + 1, epoch, mean_loss_1, mean_loss_2, test_acc, recall_ave_class, f1, time_len))
+
 
