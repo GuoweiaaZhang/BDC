@@ -282,20 +282,32 @@ def cross_whitening_loss(k_feat, q_feat):
 
     return diag_loss
 
-def CORAL(x, y):
+# def CORAL(x, y):
 
-    Bx, Dx = x.shape
-    By, Dy = y.shape
-    assert Dx == Dy, "feature dims must match"
+#     Bx, Dx = x.shape
+#     By, Dy = y.shape
+#     assert Dx == Dy, "feature dims must match"
 
-    xm = x - x.mean(dim=0, keepdim=True)
-    ym = y - y.mean(dim=0, keepdim=True)
+#     xm = x - x.mean(dim=0, keepdim=True)
+#     ym = y - y.mean(dim=0, keepdim=True)
 
-    cx = (xm.t() @ xm) / max(Bx - 1, 1)
-    cy = (ym.t() @ ym) / max(By - 1, 1)
+#     cx = (xm.t() @ xm) / max(Bx - 1, 1)
+#     cy = (ym.t() @ ym) / max(By - 1, 1)
 
-    return F.mse_loss(cx, cy)
+#     return F.mse_loss(cx, cy)
     
+def CORAL(source, target):
+
+    d = source.shape[1]
+    xm = torch.mean(source, 0, keepdim=True) - source
+    xc = xm.t() @ xm
+    xmt = torch.mean(target, 0, keepdim=True) - target
+    xct = xmt.t() @ xmt
+    loss = torch.mean(torch.mul((xc - xct), (xc - xct)))
+    loss = loss/(4*d*d)
+
+    return loss
+
 def calculate_recall(y_true, y_pred, num_classes):
 
     y_true = torch.tensor(y_true)
@@ -309,4 +321,5 @@ def calculate_recall(y_true, y_pred, num_classes):
         recall_per_class.append(recall)
     recall_per_class = torch.tensor(recall_per_class)
     return recall_per_class
+
 
