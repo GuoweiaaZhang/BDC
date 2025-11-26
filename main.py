@@ -16,7 +16,7 @@ epoch = 100
 lr = 0.0005
 weight_decay = 0.00005
 batchsize = 40
-n_classes = 10
+n_classes = 4 
 # ===================================== Data loading ====================================
 # PU data format is sample size * 1 * 2049, The 2049 dimension contains 2048 dimensions of sample points and 1 dimension of labels.
 PU_0900_1000_07_path = r'E:\Code\Data\PU_0900_1000_07.mat'
@@ -191,6 +191,7 @@ if torch.cuda.is_available():
             print(
                 '==> Epoch: {}/{}, Loss_1: {:.5f}, Loss_2: {:.5f}, Test_Acc: {:.5f}, Recall: {:.4f}, F1: {:.4f}, Running time is {:.5f} s'.format(
                     i + 1, epoch, mean_loss_1, mean_loss_2, test_acc, recall_ave_class, f1, time_len))
+
 
 
 
